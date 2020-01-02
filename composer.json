@@ -1,0 +1,123 @@
+{
+    "name": "laminas/laminas-mvc-skeleton",
+    "description": "Laminas MVC Skeleton Application",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "laminas",
+        "mvc",
+        "skeleton",
+        "framework"
+    ],
+    "require": {
+        "php": "^7.1",
+        "laminas/laminas-component-installer": "^1.0 || ^2.1",
+        "laminas/laminas-development-mode": "^3.2",
+        "laminas/laminas-skeleton-installer": "^0.1.7 || ^1.0",
+        "laminas/laminas-mvc": "^3.1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Application\\": "module/Application/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ApplicationTest\\": "module/Application/test/"
+        }
+    },
+    "extra": {
+        "laminas-skeleton-installer": [
+            {
+                "name": "laminas/laminas-developer-tools",
+                "constraint": "^1.2.3",
+                "prompt": "Would you like to install the developer toolbar?",
+                "module": true,
+                "dev": true
+            },
+            {
+                "name": "laminas/laminas-cache",
+                "constraint": "^2.9.0",
+                "prompt": "Would you like to install caching support?",
+                "module": true
+            },
+            {
+                "name": "laminas/laminas-db",
+                "constraint": "^2.10.0",
+                "prompt": "Would you like to install database support (installs laminas-db)?",
+                "module": true
+            },
+            {
+                "name": "laminas/laminas-mvc-form",
+                "constraint": "^1.0",
+                "prompt": "Would you like to install forms support?",
+                "module": true
+            },
+            {
+                "name": "laminas/laminas-json",
+                "constraint": "^3.1.2",
+                "prompt": "Would you like to install JSON de/serialization support?"
+            },
+            {
+                "name": "laminas/laminas-log",
+                "constraint": "^2.11",
+                "prompt": "Would you like to install logging support?",
+                "module": true
+            },
+            {
+                "name": "laminas/laminas-mvc-console",
+                "constraint": "^1.2.0",
+                "prompt": "Would you like to install MVC-based console support? (We recommend migrating to zf-console, symfony/console, or Aura.CLI)",
+                "module": true
+            },
+            {
+                "name": "laminas/laminas-mvc-i18n",
+                "constraint": "^1.1.1",
+                "prompt": "Would you like to install i18n support?",
+                "module": true
+            },
+            {
+                "name": "laminas/laminas-mvc-plugins",
+                "constraint": "^1.0.1",
+                "prompt": "Would you like to install the official MVC plugins, including PRG support, identity, and flash messages?",
+                "module": true
+            },
+            {
+                "name": "laminas/laminas-psr7bridge",
+                "constraint": "^1.2.0",
+                "prompt": "Would you like to use the PSR-7 middleware dispatcher?"
+            },
+            {
+                "name": "laminas/laminas-session",
+                "constraint": "^2.9.1",
+                "prompt": "Would you like to install sessions support?",
+                "module": true
+            },
+            {
+                "name": "laminas/laminas-test",
+                "constraint": "^3.3.0",
+                "prompt": "Would you like to install MVC testing tools for testing support?",
+                "dev": true
+            },
+            {
+                "name": "laminas/laminas-di",
+                "constraint": "^3.1.1",
+                "prompt": "Would you like to install the laminas-di for laminas-servicemanager?",
+                "module": true
+            }
+        ]
+    },
+    "scripts": {
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
+        "development-disable": "zf-development-mode disable",
+        "development-enable": "zf-development-mode enable",
+        "development-status": "zf-development-mode status",
+        "post-create-project-cmd": [
+            "@development-enable",
+            "php -r '$file = file_get_contents(\".gitignore\"); $file = str_replace(\"composer.lock\", \"\", $file); file_put_contents(\".gitignore\", $file);'"
+        ],
+        "serve": "php -S 0.0.0.0:8080 -t public",
+        "test": "phpunit"
+    }
+}
