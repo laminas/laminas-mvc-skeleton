@@ -110,9 +110,9 @@
     "scripts": {
         "cs-check": "phpcs",
         "cs-fix": "phpcbf",
-        "development-disable": "zf-development-mode disable",
-        "development-enable": "zf-development-mode enable",
-        "development-status": "zf-development-mode status",
+        "development-disable": "laminas-development-mode disable",
+        "development-enable": "laminas-development-mode enable",
+        "development-status": "laminas-development-mode status",
         "post-create-project-cmd": [
             "@development-enable",
             "php -r '$file = file_get_contents(\".gitignore\"); $file = str_replace(\"composer.lock\", \"\", $file); file_put_contents(\".gitignore\", $file);'"
