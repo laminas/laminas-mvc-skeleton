@@ -5,4 +5,9 @@
             <directory>./module/Application/test</directory>
         </testsuite>
     </testsuites>
+    <filter>
+        <whitelist addUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./module/</directory>
+        </whitelist>
+    </filter>
 </phpunit>
