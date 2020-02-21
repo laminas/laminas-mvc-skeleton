@@ -16,10 +16,7 @@
         ?>
 
         <!-- Scripts -->
-        <?= $this->inlineScript()
-            ->prependFile($this->basePath('js/bootstrap.min.js'))
-            ->prependFile($this->basePath('js/jquery-3.4.1.min.js'))
-        ?>
+        <?= $this->headScript() ?>
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" role="navigation">
@@ -48,6 +45,8 @@
                 <p>&copy; <?= date('Y') ?> by Laminas Project. All rights reserved.</p>
             </footer>
         </div>
-        <?= $this->inlineScript() ?>
+        <?= $this->inlineScript()
+            ->prependFile($this->basePath('js/bootstrap.min.js'))
+            ->prependFile($this->basePath('js/jquery-3.4.1.min.js')) ?>
     </body>
 </html>
