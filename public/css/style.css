@@ -6,10 +6,6 @@
     background-color: var(--brand-color);
 }
 
-.navbar-brand img {
-    filter: brightness(0) invert();
-}
-
 .btn-primary {
     background-color: var(--brand-color);
     border-color: var(--brand-color);
