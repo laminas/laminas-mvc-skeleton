@@ -1,3 +1,8 @@
+<?php
+/**
+ * @var Laminas\View\Renderer\PhpRenderer $this
+ */
+?>
 <?= $this->doctype() ?>
 <html lang="en">
     <head>
@@ -19,18 +24,18 @@
         <?= $this->headScript() ?>
     </head>
     <body>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" role="navigation">
+        <nav class="navbar navbar-expand-md navbar-dark mb-4" role="navigation">
             <div class="container">
                 <div class="navbar-header">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <a class="navbar-brand" href="<?= $this->url('home') ?>">
-                        <img src="<?= $this->basePath('img/laminas-logo.svg') ?>" height="28" alt="Laminas MVC Skeleton"/>&nbsp;Laminas MVC Skeleton
+                        <img src="<?= $this->basePath('img/laminas-logo.svg') ?>" alt="Laminas">MVC Skeleton
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav">
                         <li class="nav-item active">
                             <a class="nav-link" href="<?= $this->url('home') ?>">Home <span class="sr-only">(current)</span></a>
                         </li>
