@@ -6,6 +6,8 @@
  * @license   https://github.com/laminas/laminas-mvc-skeleton/blob/master/LICENSE.md New BSD License
  */
 
+declare(strict_types=1);
+
 $gitIgnore = sprintf('%s/.gitignore', realpath(dirname(__DIR__)));
 $rules     = file_get_contents($gitIgnore);
 $rules     = preg_replace("#[\r\n]+composer.lock#s", '', $rules);
