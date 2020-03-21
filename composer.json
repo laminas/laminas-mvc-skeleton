@@ -30,7 +30,7 @@
         "laminas-skeleton-installer": [
             {
                 "name": "laminas/laminas-developer-tools",
-                "constraint": "^1.2.3",
+                "constraint": "^2.0.1",
                 "prompt": "Would you like to install the developer toolbar?",
                 "module": true,
                 "dev": true
