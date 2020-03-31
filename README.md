@@ -29,7 +29,7 @@ $ composer run --timeout 0 serve
 
 This will start the cli-server on port 8080, and bind it to all network
 interfaces. You can then visit the site at http://localhost:8080/
-- which will bring up Zend Framework welcome page.
+- which will bring up Laminas MVC Framework welcome page.
 
 **Note:** The built-in CLI server is *for development only*.
 
@@ -208,7 +208,7 @@ Additionally, it comes with some basic tests for the shipped
 If you want to add these QA tools, execute the following:
 
 ```bash
-$ composer require --dev phpunit/phpunit squizlabs/php_codesniffer zendframework/zend-test
+$ composer require --dev squizlabs/php_codesniffer laminas/laminas-test
 ```
 
 We provide aliases for each of these tools in the Composer configuration:
