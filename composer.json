@@ -10,7 +10,7 @@
         "framework"
     ],
     "require": {
-        "php": "^7.1",
+        "php": "^7.3",
         "laminas/laminas-component-installer": "^1.0 || ^2.1",
         "laminas/laminas-development-mode": "^3.2",
         "laminas/laminas-skeleton-installer": "^0.1.7 || ^1.0",
