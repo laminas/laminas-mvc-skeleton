@@ -23,9 +23,9 @@ RUN curl -sS https://getcomposer.org/installer \
   | php -- --install-dir=/usr/local/bin --filename=composer
 
 ###
-## Additional libraries.  To use these extensions uncomment then leading `# ` 
-## from the RUN commands.  These are also included to show examples of 
-## including other libraries into the PHP installation.
+## Additional PHP extensions.  To use these extensions uncomment the 
+## leading `# ` from the RUN commands.  These are provided to show 
+## examples of including other libraries into the PHP installation.
 ###
 
 ## Install i18n libraries and extensions
