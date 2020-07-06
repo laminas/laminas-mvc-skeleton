@@ -117,7 +117,8 @@ For vagrant documentation, please refer to [vagrantup.com](https://www.vagrantup
 
 This skeleton provides a `docker-compose.yml` for use with
 [docker-compose](https://docs.docker.com/compose/); it
-uses the `Dockerfile` provided as its base. Build and start the image using:
+uses the `Dockerfile` for a `laminas` container.  Build and start the image 
+using:
 
 ```bash
 $ docker-compose up -d --build
@@ -125,12 +126,26 @@ $ docker-compose up -d --build
 
 At this point, you can visit http://localhost:8080 to see the site running.
 
-You can also run composer from the image. The container environment is named
-"laminas", so you will pass that value to `docker-compose run`:
+You can also run commands such as composer from the image.  The container 
+environment is named "laminas" so you will pass that value to 
+`docker-compose run`:
 
 ```bash
 $ docker-compose run laminas composer install
 ```
+
+Some optional modules use the `intl` PHP extension so the Dockerfile contains
+commented commands to enable this extension and others.  To install `intl` 
+support uncomment the lines
+
+```sh
+# RUN apt-get install --yes libicu-dev
+# RUN docker-php-ext-configure intl 
+# RUN docker-php-ext-install intl
+```
+
+then re-run the `docker-compose up -d --build` line as above.
+
 
 ## Web server setup
 
