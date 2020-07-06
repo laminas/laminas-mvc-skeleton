@@ -136,15 +136,15 @@ environment is named "laminas" so you will pass that value to
 $ docker-compose run laminas composer install
 ```
 
-Some composer packages may need additional PHP extensions.  The Dockerfile 
-contains several examples of commented out commands that add some of the 
-more popular php extensions.  For example, to install `intl` support 
-uncomment the lines
+Some composer packages optionally use additional PHP extensions.  
+The Dockerfile contains several commented-out commands 
+which enable some of the more popular php extensions. 
+For example, to install `pdo-pgsql` support for `laminas/laminas-db`
+uncomment the lines:
 
 ```sh
-# RUN apt-get install --yes libicu-dev
-# RUN docker-php-ext-configure intl 
-# RUN docker-php-ext-install intl
+# RUN apt-get install --yes libpq-dev
+# RUN docker-php-ext-install pdo_pgsql
 ```
 
 then re-run the `docker-compose up -d --build` line as above.

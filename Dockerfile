@@ -1,4 +1,4 @@
-FROM php:7.3-apache
+FROM php:7.4-apache
 
 LABEL maintainer="getlaminas.org" \
     org.label-schema.docker.dockerfile="/Dockerfile" \
@@ -9,9 +9,14 @@ LABEL maintainer="getlaminas.org" \
 ## Update package information
 RUN apt-get update
 
-##  Install zip libraries and extension
+## Install zip libraries and extension
 RUN apt-get install --yes git zlib1g-dev libzip-dev
 RUN docker-php-ext-install zip
+
+## Install intl library and extension
+RUN apt-get install --yes libicu-dev
+RUN docker-php-ext-configure intl 
+RUN docker-php-ext-install intl
 
 ## Configure Apache
 RUN a2enmod rewrite
@@ -22,29 +27,52 @@ RUN mv /var/www/html /var/www/public
 RUN curl -sS https://getcomposer.org/installer \
   | php -- --install-dir=/usr/local/bin --filename=composer
 
+WORKDIR /var/www
+
+
 ###
-## Additional PHP extensions.  To use these extensions uncomment the 
-## leading `# ` from the RUN commands.  These are provided to show 
-## examples of including other libraries into the PHP installation.
+## Optional extensions 
 ###
 
-## Install i18n libraries and extensions
-# RUN apt-get install --yes libicu-dev
-# RUN docker-php-ext-configure intl 
-# RUN docker-php-ext-install intl
-
-## Install mbstring for i18n string support
+## mbstring for i18n string support
 # RUN docker-php-ext-install mbstring
+
+
+###
+## Some laminas/laminas-db supported PDO extensions
+###
 
 ## MySQL PDO support
 # RUN docker-php-ext-install pdo_mysql
 
-## Redis support.  igbinary and libzstd-dev are only needed based on redis 
-## pecl options
+## PostgreSQL PDO support
+# RUN apt-get install --yes libpq-dev
+# RUN docker-php-ext-install pdo_pgsql
+
+
+###
+## laminas/laminas-cache supported extensions
+###
+
+## APCU
+# RUN pecl install apcu
+# RUN docker-php-ext-enable apcu
+
+## Memcached
+# RUN apt-get install --yes libmemcached-dev 
+# RUN pecl install memcached
+# RUN docker-php-ext-enable memcached
+
+## MongoDB
+# RUN pecl install mongodb
+# RUN docker-php-ext-enable mongodb
+
+## Redis support.  igbinary and libzstd-dev are only needed based on 
+## redis pecl options
 # RUN pecl install igbinary
 # RUN docker-php-ext-enable igbinary
 # RUN apt-get install --yes libzstd-dev
 # RUN pecl install redis
 # RUN docker-php-ext-enable redis
 
-WORKDIR /var/www
+
