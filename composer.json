@@ -119,5 +119,14 @@
         ],
         "serve": "php -S 0.0.0.0:8080 -t public",
         "test": "phpunit"
+    },
+    "scripts-descriptions": {
+        "cs-check": "Run coding standards checks.",
+        "cs-fix": "Automatically fix coding standard issues.",
+        "development-disable": "Disable development mode.",
+        "development-enable": "Enable development mode.",
+        "development-status": "Detail whether or not the application is in development mode.",
+        "serve": "Start the built-in PHP web server and serve the application.",
+        "test": "Run unit tests."
     }
 }
