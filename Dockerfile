@@ -9,15 +9,6 @@ LABEL maintainer="getlaminas.org" \
 ## Update package information
 RUN apt-get update
 
-## Install zip libraries and extension
-RUN apt-get install --yes git zlib1g-dev libzip-dev
-RUN docker-php-ext-install zip
-
-## Install intl library and extension
-RUN apt-get install --yes libicu-dev
-RUN docker-php-ext-configure intl 
-RUN docker-php-ext-install intl
-
 ## Configure Apache
 RUN a2enmod rewrite
 RUN sed -i 's!/var/www/html!/var/www/public!g' /etc/apache2/sites-available/000-default.conf
@@ -27,16 +18,25 @@ RUN mv /var/www/html /var/www/public
 RUN curl -sS https://getcomposer.org/installer \
   | php -- --install-dir=/usr/local/bin --filename=composer
 
-WORKDIR /var/www
+###
+## PHP Extensisons
+###
 
+## Install zip libraries and extension
+RUN apt-get install --yes git zlib1g-dev libzip-dev
+RUN docker-php-ext-install zip
+
+## Install intl library and extension
+RUN apt-get install --yes libicu-dev
+RUN docker-php-ext-configure intl 
+RUN docker-php-ext-install intl
 
 ###
-## Optional extensions 
+## Optional PHP extensions 
 ###
 
 ## mbstring for i18n string support
 # RUN docker-php-ext-install mbstring
-
 
 ###
 ## Some laminas/laminas-db supported PDO extensions
@@ -48,7 +48,6 @@ WORKDIR /var/www
 ## PostgreSQL PDO support
 # RUN apt-get install --yes libpq-dev
 # RUN docker-php-ext-install pdo_pgsql
-
 
 ###
 ## laminas/laminas-cache supported extensions
@@ -76,3 +75,4 @@ WORKDIR /var/www
 # RUN docker-php-ext-enable redis
 
 
+WORKDIR /var/www
