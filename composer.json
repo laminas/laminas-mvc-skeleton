@@ -115,7 +115,8 @@
         "development-status": "laminas-development-mode status",
         "post-create-project-cmd": [
             "@development-enable",
-            "php bin/update-gitignore.php"
+            "php bin/update-gitignore.php",
+            "php -r 'if (file_exists(\"bin/remove-package-artifacts.php\")) include \"bin/remove-package-artifacts.php\";'"
         ],
         "serve": "php -S 0.0.0.0:8080 -t public",
         "test": "phpunit"
