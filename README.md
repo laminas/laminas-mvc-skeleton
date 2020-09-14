@@ -143,12 +143,14 @@ For example, to install `pdo-pgsql` support for `laminas/laminas-db`
 uncomment the lines:
 
 ```sh
-# RUN apt-get install --yes libpq-dev
-# RUN docker-php-ext-install pdo_pgsql
+# RUN apt-get install --yes libpq-dev \
+#     && docker-php-ext-install pdo_pgsql
 ```
 
 then re-run the `docker-compose up -d --build` line as above.
 
+> You may also want to combine the various `apt-get` and `docker-php-ext-*`
+> statements later to reduce the number of layers created by your image.
 
 ## Web server setup
 
