@@ -116,7 +116,8 @@
         "post-create-project-cmd": [
             "@development-enable",
             "php bin/update-gitignore.php",
-            "php -r 'if (file_exists(\"bin/remove-package-artifacts.php\")) include \"bin/remove-package-artifacts.php\";'"
+            "php -r 'if (file_exists(\"bin/remove-package-artifacts.php\")) include \"bin/remove-package-artifacts.php\";'",
+            "php -r 'if (file_exists(\"CHANGELOG.md\")) unlink(\"CHANGELOG.md\");'"
         ],
         "serve": "php -S 0.0.0.0:8080 -t public",
         "test": "phpunit"
