@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 1.0.0 - TBD
+## 1.0.0 - 2020-09-14
 
 This is the initial 1.0.0 release under the Laminas organization.
 
@@ -16,10 +16,6 @@ This is the initial 1.0.0 release under the Laminas organization.
 
 - Improves the shipped Dockerfile and default extensions available.
 
-### Deprecated
-
-- Nothing.
-
 ### Removed
 
 - Removes the `public/index.html` page, which could lead to display of the default Apache2 landing page.
@@ -29,3 +25,21 @@ This is the initial 1.0.0 release under the Laminas organization.
 - Ensures initial page presentation looks as expected, including logo display, no duplication, proper 404 display, etc.
 
 - Ensures Zend Framework is no longer referenced in all commands, documentation, and default pages.
+
+
+-----
+
+### Release Notes for [1.0.0](https://github.com/laminas/laminas-mvc-skeleton/milestone/1)
+
+
+
+### 1.0.0
+
+- Total issues resolved: **0**
+- Total pull requests resolved: **1**
+- Total contributors: **1**
+
+#### Documentation
+
+ - [25: Adds CHANGELOG entries for 1.0.0 release](https://github.com/laminas/laminas-mvc-skeleton/pull/25) thanks to @weierophinney
+
