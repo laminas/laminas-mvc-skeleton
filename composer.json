@@ -13,11 +13,7 @@
         "php": "^7.3 || ~8.0.0",
         "laminas/laminas-component-installer": "^1.0 || ^2.1",
         "laminas/laminas-development-mode": "^3.2",
-<<<<<<< HEAD
-        "laminas/laminas-skeleton-installer": "^0.1.7 || ^0.2 ||  ^1.0",
-=======
         "laminas/laminas-skeleton-installer": "^0.2 || ^1.0",
->>>>>>> 12ff936b69caf63797b9c06a9f3a5d95482be913
         "laminas/laminas-mvc": "^3.1.1"
     },
     "require-dev": {
