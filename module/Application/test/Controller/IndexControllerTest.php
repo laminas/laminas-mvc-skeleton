@@ -32,7 +32,7 @@ class IndexControllerTest extends AbstractHttpControllerTestCase
         parent::setUp();
     }
 
-    public function testIndexActionCanBeAccessed()
+    public function testIndexActionCanBeAccessed(): void
     {
         $this->dispatch('/', 'GET');
         $this->assertResponseStatusCode(200);
@@ -42,13 +42,13 @@ class IndexControllerTest extends AbstractHttpControllerTestCase
         $this->assertMatchedRouteName('home');
     }
 
-    public function testIndexActionViewModelTemplateRenderedWithinLayout()
+    public function testIndexActionViewModelTemplateRenderedWithinLayout(): void
     {
         $this->dispatch('/', 'GET');
         $this->assertQuery('.container .jumbotron');
     }
 
-    public function testInvalidRouteDoesNotCrash()
+    public function testInvalidRouteDoesNotCrash(): void
     {
         $this->dispatch('/invalid/route', 'GET');
         $this->assertResponseStatusCode(404);
