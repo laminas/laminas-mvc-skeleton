@@ -220,6 +220,7 @@ The skeleton does not come with any QA tooling by default, but does ship with
 configuration for each of:
 
 - [phpcs](https://github.com/squizlabs/php_codesniffer)
+- [lamians-test](https://docs.laminas.dev/tutorials/unit-testing/)
 - [phpunit](https://phpunit.de)
 
 Additionally, it comes with some basic tests for the shipped
@@ -228,7 +229,7 @@ Additionally, it comes with some basic tests for the shipped
 If you want to add these QA tools, execute the following:
 
 ```bash
-$ composer require --dev phpunit/phpunit squizlabs/php_codesniffer laminas/laminas-test
+$ composer require --dev squizlabs/php_codesniffer laminas/laminas-test
 ```
 
 We provide aliases for each of these tools in the Composer configuration:
