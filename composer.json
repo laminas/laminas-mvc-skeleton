@@ -16,11 +16,6 @@
         "laminas/laminas-skeleton-installer": "^0.2 || ^1.0",
         "laminas/laminas-mvc": "^3.1.1"
     },
-    "require-dev": {
-        "vimeo/psalm": "^4.6.0",
-        "laminas/laminas-test": "^3.3.0",
-        "psalm/plugin-phpunit": "^0.15.1"
-    },
     "autoload": {
         "psr-4": {
             "Application\\": "module/Application/src/"
