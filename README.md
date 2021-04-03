@@ -220,7 +220,7 @@ The skeleton does not come with any QA tooling by default, but does ship with
 configuration for each of:
 
 - [phpcs](https://github.com/squizlabs/php_codesniffer)
-- [lamians-test](https://docs.laminas.dev/tutorials/unit-testing/)
+- [laminas-test](https://docs.laminas.dev/laminas-test/)
 - [phpunit](https://phpunit.de)
 
 Additionally, it comes with some basic tests for the shipped
