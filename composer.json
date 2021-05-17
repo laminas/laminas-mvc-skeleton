@@ -1,30 +1,20 @@
 {
     "name": "laminas/laminas-mvc-skeleton",
-    "description": "Laminas MVC Skeleton Application",
     "type": "project",
-    "license": "BSD-3-Clause",
+    "description": "Laminas MVC Skeleton Application",
     "keywords": [
         "laminas",
         "mvc",
         "skeleton",
         "framework"
     ],
+    "license": "BSD-3-Clause",
     "require": {
         "php": "^7.3",
         "laminas/laminas-component-installer": "^1.0 || ^2.1",
         "laminas/laminas-development-mode": "^3.2",
-        "laminas/laminas-skeleton-installer": "^0.2 || ^1.0",
-        "laminas/laminas-mvc": "^3.1.1"
-    },
-    "autoload": {
-        "psr-4": {
-            "Application\\": "module/Application/src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "ApplicationTest\\": "module/Application/test/"
-        }
+        "laminas/laminas-mvc": "^3.1.1",
+        "laminas/laminas-skeleton-installer": "^0.2 || ^1.0"
     },
     "extra": {
         "laminas-skeleton-installer": [
@@ -107,18 +97,28 @@
             }
         ]
     },
+    "autoload": {
+        "psr-4": {
+            "Application\\": "module/Application/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ApplicationTest\\": "module/Application/test/"
+        }
+    },
     "scripts": {
-        "cs-check": "phpcs",
-        "cs-fix": "phpcbf",
-        "development-disable": "laminas-development-mode disable",
-        "development-enable": "laminas-development-mode enable",
-        "development-status": "laminas-development-mode status",
         "post-create-project-cmd": [
             "@development-enable",
             "php bin/update-gitignore.php",
             "php -r 'if (file_exists(\"bin/remove-package-artifacts.php\")) include \"bin/remove-package-artifacts.php\";'",
             "php -r 'if (file_exists(\"CHANGELOG.md\")) unlink(\"CHANGELOG.md\");'"
         ],
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
+        "development-disable": "laminas-development-mode disable",
+        "development-enable": "laminas-development-mode enable",
+        "development-status": "laminas-development-mode status",
         "serve": "php -S 0.0.0.0:8080 -t public",
         "test": "phpunit"
     },
