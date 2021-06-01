@@ -67,8 +67,7 @@
             {
                 "name": "laminas/laminas-cli",
                 "constraint": "^1.1.1",
-                "prompt": "Would you like to install command-line interface support?",
-                "module": true
+                "prompt": "Would you like to install command-line interface support?"
             },
             {
                 "name": "laminas/laminas-mvc-i18n",
