@@ -108,8 +108,8 @@
         ]
     },
     "scripts": {
-        "cs-check": "phpcs",
-        "cs-fix": "phpcbf",
+        "cs-check": "vendor/bin/phpcs",
+        "cs-fix": "vendor/bin/phpcbf",
         "development-disable": "laminas-development-mode disable",
         "development-enable": "laminas-development-mode enable",
         "development-status": "laminas-development-mode status",
@@ -120,7 +120,7 @@
             "php -r 'if (file_exists(\"CHANGELOG.md\")) unlink(\"CHANGELOG.md\");'"
         ],
         "serve": "php -S 0.0.0.0:8080 -t public",
-        "test": "phpunit"
+        "test": "vendor/bin/phpunit"
     },
     "scripts-descriptions": {
         "cs-check": "Run coding standards checks.",

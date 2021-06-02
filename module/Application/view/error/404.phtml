@@ -1,5 +1,11 @@
 <?php
+
 use Laminas\Mvc\Application;
+
+/**
+ * @var Laminas\View\Renderer\PhpRenderer $this
+ */
+
 ?>
 <h1>A 404 error occurred</h1>
 <h2><?= $this->message ?></h2>
@@ -25,8 +31,8 @@ use Laminas\Mvc\Application;
             $reasonMessage = 'We cannot determine at this time why a 404 was generated.';
             break;
     }
-?>
-<p><?= $reasonMessage ?></p>
+    ?>
+    <p><?= $reasonMessage ?></p>
 <?php endif ?>
 
 <?php if (! empty($this->controller)) : ?>
