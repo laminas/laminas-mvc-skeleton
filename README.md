@@ -78,6 +78,22 @@ precedence over the former when running tests, and is ignored by version
 control. (If you want to make the modifications permanent, edit the
 `phpunit.xml.dist` file.)
 
+## Running Psalm Static Analysis
+
+To run the supplied skeleton static analysis, you need to do one of the following:
+It is recommended to install the test components from laminas (laminas/laminas-test), 
+as this is used in the tests supplied.
+
+  ```bash
+  $ composer require --dev vimeo/psalm psalm/plugin-phpunit laminas/laminas-test
+  ```
+
+Once psalm support is present, you can run the static analysis using:
+
+```bash
+$ composer static-analysis
+```
+
 ## Using Vagrant
 
 This skeleton includes a `Vagrantfile` based on ubuntu 18.04 (bento box)

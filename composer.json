@@ -120,7 +120,8 @@
             "php -r 'if (file_exists(\"CHANGELOG.md\")) unlink(\"CHANGELOG.md\");'"
         ],
         "serve": "php -S 0.0.0.0:8080 -t public",
-        "test": "vendor/bin/phpunit"
+        "test": "vendor/bin/phpunit",
+        "static-analysis": "vendor/bin/psalm --shepherd --stats"
     },
     "scripts-descriptions": {
         "cs-check": "Run coding standards checks.",
