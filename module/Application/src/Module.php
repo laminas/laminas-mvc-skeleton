@@ -8,6 +8,8 @@ class Module
 {
     public function getConfig(): array
     {
-        return (array) include __DIR__ . '/../config/module.config.php';
+        /** @var array $config */
+        $config = include __DIR__ . '/../config/module.config.php';
+        return $config;
     }
 }
