@@ -2,27 +2,30 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 1.2.0 - TBD
+## 1.2.0 - 2021-06-07
 
-### Added
 
-- Nothing.
+-----
 
-### Changed
+### Release Notes for [1.2.0](https://github.com/laminas/laminas-mvc-skeleton/milestone/6)
 
-- Nothing.
+Feature release (minor)
 
-### Deprecated
+### 1.2.0
 
-- Nothing.
+- Total issues resolved: **0**
+- Total pull requests resolved: **7**
+- Total contributors: **5**
 
-### Removed
+#### Enhancement
 
-- Nothing.
-
-### Fixed
-
-- Nothing.
+ - [41: Remove left over header license doc](https://github.com/laminas/laminas-mvc-skeleton/pull/41) thanks to @samsonasik
+ - [40: Use laminas-mvc-middleware](https://github.com/laminas/laminas-mvc-skeleton/pull/40) thanks to @Xerkus
+ - [39: &#91;Extra&#93; Using latest components under extra in composer.json](https://github.com/laminas/laminas-mvc-skeleton/pull/39) thanks to @samsonasik
+ - [37: Remove file headers](https://github.com/laminas/laminas-mvc-skeleton/pull/37) thanks to @ghostwriter
+ - [36: Psalm integration](https://github.com/laminas/laminas-mvc-skeleton/pull/36) thanks to @nusphere
+ - [35: Fix CodeStyle Issues and correct composer scripts](https://github.com/laminas/laminas-mvc-skeleton/pull/35) thanks to @nusphere
+ - [31: Provide support for PHP 8.0](https://github.com/laminas/laminas-mvc-skeleton/pull/31) thanks to @ittmann
 
 ## 1.1.0 - 2020-11-09
 
