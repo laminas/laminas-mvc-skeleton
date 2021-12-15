@@ -36,12 +36,6 @@
                 "dev": true
             },
             {
-                "name": "laminas/laminas-cache",
-                "constraint": "^2.11.1",
-                "prompt": "Would you like to install caching support?",
-                "module": true
-            },
-            {
                 "name": "laminas/laminas-db",
                 "constraint": "^2.12.0",
                 "prompt": "Would you like to install database support (installs laminas-db)?",
