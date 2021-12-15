@@ -2,27 +2,24 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 1.3.0 - TBD
+## 1.3.0 - 2021-12-15
 
-### Added
 
-- Nothing.
+-----
 
-### Changed
+### Release Notes for [1.3.0](https://github.com/laminas/laminas-mvc-skeleton/milestone/8)
 
-- Nothing.
+Feature release (minor)
 
-### Deprecated
+### 1.3.0
 
-- Nothing.
+- Total issues resolved: **0**
+- Total pull requests resolved: **1**
+- Total contributors: **1**
 
-### Removed
+#### Enhancement
 
-- Nothing.
-
-### Fixed
-
-- Nothing.
+ - [44: &#91;Dep&#93; Remove laminas-cache from extra installer option](https://github.com/laminas/laminas-mvc-skeleton/pull/44) thanks to @samsonasik
 
 ## 1.2.0 - 2021-06-07
 
