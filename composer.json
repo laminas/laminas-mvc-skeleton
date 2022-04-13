@@ -125,5 +125,11 @@
         "development-status": "Detail whether or not the application is in development mode.",
         "serve": "Start the built-in PHP web server and serve the application.",
         "test": "Run unit tests."
+    },
+    "config": {
+        "allow-plugins": {
+            "laminas/laminas-component-installer": true,
+            "laminas/laminas-skeleton-installer": true
+        }
     }
 }
