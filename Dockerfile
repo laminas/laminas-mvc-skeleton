@@ -1,4 +1,4 @@
-FROM php:7.3-apache
+FROM php:7.4-apache
 
 LABEL maintainer="getlaminas.org" \
     org.label-schema.docker.dockerfile="/Dockerfile" \
