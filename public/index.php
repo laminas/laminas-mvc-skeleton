@@ -20,8 +20,20 @@ if (php_sapi_name() === 'cli-server') {
     unset($path);
 }
 
+// Set default timezone if not available in php.ini
+if (!ini_get('date.timezone')) {
+    date_default_timezone_set('UTC');
+}
+
+// Set paths
+$path =  [
+    'autoload'   => __DIR__ . '/../vendor/autoload.php',
+    'app_config' => __DIR__ . '/../config/application.config.php',
+    'dev_config' => __DIR__ . '/../config/development.config.php',
+];
+
 // Composer autoloading
-include __DIR__ . '/../vendor/autoload.php';
+include realpath($path['autoload']);
 
 if (! class_exists(Application::class)) {
     throw new RuntimeException(
@@ -33,9 +45,9 @@ if (! class_exists(Application::class)) {
 }
 
 // Retrieve configuration
-$appConfig = require __DIR__ . '/../config/application.config.php';
-if (file_exists(__DIR__ . '/../config/development.config.php')) {
-    $appConfig = ArrayUtils::merge($appConfig, require __DIR__ . '/../config/development.config.php');
+$appConfig = require realpath($path['app_config']);
+if (file_exists($path['dev_config'])) {
+    $appConfig = ArrayUtils::merge($appConfig, require realpath($path['dev_config']));
 }
 
 // Run the application!
