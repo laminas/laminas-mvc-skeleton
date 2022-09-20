@@ -116,7 +116,10 @@
         ],
         "post-install-cmd": "@clear-config-cache",
         "post-update-cmd": "@clear-config-cache",
-        "serve": "php -S 0.0.0.0:8080 -t public",
+        "serve": [
+            "Composer\\Config::disableProcessTimeout",
+            "php -S 0.0.0.0:8080 -t public"
+        ],
         "test": "vendor/bin/phpunit",
         "static-analysis": "vendor/bin/psalm --shepherd --stats"
     },
