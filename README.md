@@ -40,7 +40,7 @@ Once installed, you can test it out immediately using PHP's built-in web server:
 $ cd path/to/install
 $ php -S 0.0.0.0:8080 -t public
 # OR use the composer alias:
-$ composer run --timeout 0 serve
+$ composer serve
 ```
 
 This will start the cli-server on port 8080, and bind it to all network
