@@ -102,6 +102,7 @@
         ]
     },
     "scripts": {
+        "clear-config-cache": "php bin/clear-config-cache.php",
         "cs-check": "vendor/bin/phpcs",
         "cs-fix": "vendor/bin/phpcbf",
         "development-disable": "laminas-development-mode disable",
@@ -118,6 +119,7 @@
         "static-analysis": "vendor/bin/psalm --shepherd --stats"
     },
     "scripts-descriptions": {
+        "clear-config-cache": "Clears merged config cache. Required for config changes to be applied.",
         "cs-check": "Run coding standards checks.",
         "cs-fix": "Automatically fix coding standard issues.",
         "development-disable": "Disable development mode.",
