@@ -110,41 +110,6 @@ Once psalm support is present, you can run the static analysis using:
 $ composer static-analysis
 ```
 
-## Using Vagrant
-
-This skeleton includes a `Vagrantfile` based on ubuntu 18.04 (bento box)
-with configured Apache2 and PHP 7.3. Start it up using:
-
-```bash
-$ vagrant up
-```
-
-Once built, you can also run composer within the box. For example, the following
-will install dependencies:
-
-```bash
-$ vagrant ssh -c 'composer install'
-```
-
-While this will update them:
-
-```bash
-$ vagrant ssh -c 'composer update'
-```
-
-While running, Vagrant maps your host port 8080 to port 80 on the virtual
-machine; you can visit the site at http://localhost:8080/
-
-> ### Vagrant and VirtualBox
->
-> The vagrant image is based on bento/ubuntu-18.04. If you are using VirtualBox as
-> a provider, you will need:
->
-> - Vagrant 2.2.6 or later
-> - VirtualBox 6.0.14 or later
-
-For vagrant documentation, please refer to [vagrantup.com](https://www.vagrantup.com/)
-
 ## Using docker-compose
 
 This skeleton provides a `docker-compose.yml` for use with
