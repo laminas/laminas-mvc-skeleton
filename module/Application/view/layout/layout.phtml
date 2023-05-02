@@ -34,8 +34,8 @@
                     <button
                         class="navbar-toggler"
                         type="button"
-                        data-toggle="collapse"
-                        data-target="#navbarSupportedContent"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent"
                         aria-expanded="false"
                         aria-label="Toggle navigation"
@@ -68,7 +68,6 @@
             </footer>
         </div>
         <?= $this->inlineScript()
-            ->prependFile($this->basePath('js/bootstrap.min.js'))
-            ->prependFile($this->basePath('js/jquery-3.5.1.min.js')) ?>
+            ->prependFile($this->basePath('js/bootstrap.min.js')) ?>
     </body>
 </html>
