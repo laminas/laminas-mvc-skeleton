@@ -1,0 +1,30 @@
+name: laminas-mvc-skeleton
+recipe: lamp
+config:
+  webroot: public
+
+services:
+  appserver:
+    type: php:8.2
+
+  database:
+    type: mysql
+    portforward: 33067
+
+  pma:
+    type: phpmyadmin
+    hosts:
+      - database
+    overrides:
+      environment:
+        PMA_HOST: database
+        PMA_USER: lamp
+        PMA_PASSWORD: lamp
+
+proxy:
+  appserver:
+    - laminas.lndo.site/
+  pma:
+    - pma.laminas.lndo.site/
+  database:
+    - mysql.laminas.lndo.site/
