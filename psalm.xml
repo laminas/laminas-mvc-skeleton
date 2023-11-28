@@ -38,7 +38,7 @@
     </issueHandlers>
 
     <stubs>
-        <file name=".psalm-stubs.meta.php"/>
+        <file name=".psalm-stubs.phpstub"/>
     </stubs>
 
     <plugins>
