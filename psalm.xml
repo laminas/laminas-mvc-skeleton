@@ -37,6 +37,10 @@
         </InternalMethod>
     </issueHandlers>
 
+    <stubs>
+        <file name=".psalm-stubs.meta.php"/>
+    </stubs>
+
     <plugins>
         <pluginClass class="Psalm\PhpUnitPlugin\Plugin"/>
     </plugins>
