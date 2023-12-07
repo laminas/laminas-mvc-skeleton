@@ -10,3 +10,8 @@
     background-color: var(--brand-color);
     border-color: var(--brand-color);
 }
+
+/* allows bootstrap to style Laminas Navigation generated menu items within the navbar */
+.navbar li.active a {
+    color: var(--bs-navbar-active-color);
+}
