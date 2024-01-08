@@ -12,7 +12,7 @@ chdir(dirname(__DIR__));
 
 // Decline static file requests back to the PHP built-in webserver
 if (php_sapi_name() === 'cli-server') {
-    $path = realpath(__DIR__ . parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+    $path = realpath(__DIR__ . parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH));
     if (is_string($path) && __FILE__ !== $path && is_file($path)) {
         return false;
     }
@@ -32,5 +32,6 @@ if (! class_exists(Application::class)) {
 
 $container = require __DIR__ . '/../config/container.php';
 // Run the application!
-$container->get('Application')
-    ->run();
+/** @var Application $app */
+$app = $container->get('Application');
+$app->run();
