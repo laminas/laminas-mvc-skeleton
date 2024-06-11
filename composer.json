@@ -62,7 +62,7 @@
             },
             {
                 "name": "laminas/laminas-log",
-                "constraint": "^2.16.1",
+                "constraint": "^2.17.0",
                 "prompt": "Would you like to install logging support?",
                 "module": true
             },
