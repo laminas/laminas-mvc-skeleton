@@ -7,4 +7,3 @@ data/cache/*
 !data/cache/.gitkeep
 phpunit.xml
 composer.lock
-.idea/
