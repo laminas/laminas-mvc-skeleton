@@ -17,6 +17,5 @@ jobs:
 
       - name: Build and run docker compose file
         run: |
-          docker-compose up -d --build
-          docker-compose run laminas echo "ok"
-
+          docker compose up -d --build
+          docker compose run laminas echo "ok"
