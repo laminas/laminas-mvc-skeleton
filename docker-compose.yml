@@ -1,7 +1,10 @@
 services:
   laminas:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: prod
+    environment:
+      - APP_ENV=production
     ports:
      - "8080:80"
-    volumes:
-     - .:/var/www

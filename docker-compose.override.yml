@@ -1,0 +1,12 @@
+services:
+  laminas:
+    build:
+      target: dev
+    environment:
+      - APP_ENV=development
+    volumes:
+      - ./bin:/var/www/bin
+      - ./config:/var/www/config
+      - ./data:/var/www/data
+      - ./module:/var/www/module
+      - ./public:/var/www/public

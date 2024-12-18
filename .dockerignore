@@ -1,0 +1,13 @@
+# All is ignored by default
+*
+
+# Whitelist files and directories
+!composer.json
+!COPYRIGHT.md
+!LICENSE.md
+!README.md
+!bin/
+!config/
+!data/
+!module/
+!public/

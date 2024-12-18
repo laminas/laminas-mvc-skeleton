@@ -8,14 +8,56 @@ on:
     types: [opened, reopened]
 
 jobs:
-  build:
+  lint:
+    name: Lint Dockerfile
     runs-on: ubuntu-latest
 
     steps:
-      - name: "Checkout"
-        uses: "actions/checkout@v4"
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Build and run docker compose file
+      - name: Lint Dockerfile
+        uses: hadolint/hadolint-action@v3.1.0
+        with:
+          recursive: true
+
+  build_and_test:
+    name: Build and Test Docker Images
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        target:
+          - { name: dev, port: 8080 }
+          - { name: prod, port: 8081 }
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build image for ${{ matrix.target.name }}
+        run: docker buildx build --target ${{ matrix.target.name }}  -t laminas:${{ matrix.target.name }} .
+
+      - name: PHPUnit for dev only
+        if: matrix.target.name == 'dev'
+        run: docker run --rm laminas:${{ matrix.target.name }} vendor/bin/phpunit module/*/test
+
+      - name: Start container for ${{ matrix.target.name }} and check HTTP status
         run: |
-          docker compose up -d --build
-          docker compose run laminas echo "ok"
+          docker run --rm -d -p ${{ matrix.target.port }}:80 --name laminas-test-${{ matrix.target.name }} laminas:${{ matrix.target.name }}
+          http_status_code=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:${{ matrix.target.port }})
+          response_body=$(curl -s http://localhost:${{ matrix.target.port }})
+          if [ "$http_status_code" -eq 200 ] && [[ "$response_body" =~ "Welcome" ]]; then
+              echo "HTTP status code: $http_status_code"
+              echo "Response body: $response_body"
+          else
+                echo "Service did not start successfully."
+                echo "HTTP status code: $http_status_code"
+                echo "Response body: $response_body"
+                exit 1
+          fi
+
+      - name: Stop and remove container for ${{ matrix.target.name }}
+        run: |
+          docker ps
+          docker stop laminas-test-${{ matrix.target.name }}

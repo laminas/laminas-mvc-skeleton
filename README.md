@@ -111,7 +111,7 @@ $ composer static-analysis
 
 ## Using docker-compose
 
-This skeleton provides a `docker-compose.yml` for use with [docker-compose](https://docs.docker.com/compose/);
+This skeleton provides a `docker-compose.yml` and a `docker-compose.override.yml` for use with [docker-compose](https://docs.docker.com/compose/);
 it uses the provided `Dockerfile` to build a docker image for the `laminas` container created with `docker-compose`.
 
 Build and start the image and container using:
@@ -131,17 +131,31 @@ $ docker-compose run laminas composer install
 
 Some composer packages optionally use additional PHP extensions.
 The Dockerfile contains several commented-out commands which enable some of the more popular php extensions.
-For example, to install `pdo-pgsql` support for `laminas/laminas-db` uncomment the lines:
+For example, to install `pdo-pgsql` support for `laminas/laminas-db` uncomment the lines `pdo-pgsql` :
 
 ```sh
-# RUN apt-get install --yes libpq-dev \
-#     && docker-php-ext-install pdo_pgsql
+RUN set -eux; \
+    install-php-extensions \
+        apcu \
+        intl \
+        opcache \
+        zip \
+        ## Add here all extensions you need
+        # memcached \
+        # mongodb \
+        # redis \
+        # mbstring \
+        pdo_mysql \
+        # pdo_pgsql \
+    ;
 ```
 
 then re-run the `docker-compose up -d --build` line as above.
 
-> You may also want to combine the various `apt-get` and `docker-php-ext-*`
+> You may also want to combine the various `apt-get` and `install-php-extensions`
 > statements later to reduce the number of layers created by your image.
+
+> [install-php-extensions](https://github.com/mlocati/docker-php-extension-installer) is a script which easily installs PHP extensions in Docker containers.
 
 ## Web server setup
 
