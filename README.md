@@ -16,6 +16,16 @@
 >
 > You trust us enough to use our software. We ask that you trust us to say the truth on this. We need your help. Go out and protest this unnecessary war. Stop the bloodshed. Say "stop the war!"
 
+> [!CAUTION]
+>
+> ## Maintenance mode
+>
+> This package is considered feature-complete, and is now in **security-only** maintenance mode, following a decision by the Technical Steering Committee.
+> More information on this decision can be found in a blog post: [Laminas MVC End of Life Schedule](https://getlaminas.org/blog/2026-03-06-laminas-mvc-eol-schedule.html).  
+> The security-only status will continue until the security support for PHP 8.4 ends, which will be 31st December 2028.
+>
+> If you have a security issue, please [follow our security reporting guidelines](https://getlaminas.org/security/).
+
 ## Introduction
 
 This is a skeleton application using the Laminas MVC layer and module
