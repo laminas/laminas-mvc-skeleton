@@ -4,6 +4,6 @@
         "local>laminas/.github:renovate-config"
     ],
     "constraints": {
-        "php": "^7.4"
+        "php": "^8.0"
     }
 }
