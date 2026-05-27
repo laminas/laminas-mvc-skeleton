@@ -63,3 +63,4 @@ return [
     // Should be compatible with Laminas\ServiceManager\Config.
     // 'service_manager' => [],
 ];
+// hackathon impact analysis demo
